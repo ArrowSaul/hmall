@@ -1,4 +1,32 @@
 # 黑马商城
-
-#### 介绍
-黑马商城
+本项目是基于 Spring Boot + Spring Cloud + MyBatis 的电商商城系统，旨在实现一个高效、可扩展的电商平台。
+# 架构
+- 框架：Spring Boot + Spring Cloud + MyBatis
+- 中间件：Seata + Nacos + Sentinel + Feign
+- 数据库：MySQL
+# 项目工程目录
+- caet-service：购物车服务
+- hm-gateway：网关
+- item-service：商品服务
+- pay-service：支付服务
+- trade-service：订单服务
+- user-service：用户服务
+- hm-common：共享功能
+- hm-api：Feign的开放接口
+# 功能特点
+- 用户管理：实现用户注册、登录、信息管理等功能。
+- 商品管理：支持商品的增删改查、分类管理等操作。
+- 购物车：用户可添加、删除商品至购物车，调整商品数量。
+- 订单系统：支持订单创建、支付、查询等功能。
+- 支付集成：集成多种支付方式，确保支付安全便捷。
+# 技术亮点
+- 微服务架构：采用Spring Cloud构建微服务架构，提升系统的可扩展性和维护性。
+- 分布式事务：使用Seata解决分布式事务问题，保证数据一致性。
+- 服务治理：通过Nacos实现服务注册与发现，进行配置管理。
+- API网关：利用Feign实现微服务间的高效通信。
+- 监控与限流：使用Sentinel进行流量监控和限流，保障系统稳定性。
+# 启动与部署
+- 配置文件：在hm-common的resources目录中有Nacos配置文件和数据库配置文件，可根据实际部署环境进行修改。
+- JDK版本：项目采用JDK11，版本过低或过高可能导致启动失败或运行异常。
+- 组件部署：除Sentinel外，其他组件均采用Docker部署，也可根据需要自行调整。
+- 启动方式：每个可启动工程有四个YAML文件，其中bootstrap文件用于引入Nacos配置，dev和local可选，使用时需指定，application.yaml可配置数据库名等信息。
